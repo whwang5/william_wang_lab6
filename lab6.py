@@ -48,9 +48,11 @@ while True:
             print("Your password has been encoded and stored!")
 
     elif choice == "2":
-        print(decode(encoded_password))
-
-
+        if 'encoded_password' in locals():
+            decoded_password = decode(encoded_password)
+            print(f"The encoded password is {encoded_password}, and the original password is {decoded_password}.")
+        else:
+            print("No encoded password available. Please encode a password first.")
     elif choice == "3":
         print("Exiting the program.")
         break
